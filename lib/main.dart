@@ -18,7 +18,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      //theme
       theme: CustomTheme.getTheme(),
+
       home: DefaultTabController(
           length: 4,
           child: Scaffold(
@@ -32,22 +34,22 @@ class MyApp extends StatelessWidget {
                     Tab(
                         icon: Icon(
                       Icons.home,
-                      color: Colors.black,
+                      //color: Colors.black,
                     )),
                     Tab(
                         icon: Icon(
                       Icons.favorite,
-                      color: Colors.black,
+                      //color: Colors.black,
                     )),
                     Tab(
                         icon: Icon(
                       Icons.shopping_cart,
-                      color: Colors.black,
+                      //color: Colors.black,
                     )),
                     Tab(
                         icon: Icon(
                       Icons.settings,
-                      color: Colors.black,
+                      //color: Colors.black,
                     )),
                   ]),
             ),

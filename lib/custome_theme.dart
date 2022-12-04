@@ -19,6 +19,9 @@ class CustomTheme {
     return ThemeData(
         primaryColor: AppColors.mainColor,
 
+        //Define the default theme font family
+        fontFamily: 'DMSans',
+
         // ignore: prefer_const_constructors
         appBarTheme: AppBarTheme(
             backgroundColor: Colors.white,
