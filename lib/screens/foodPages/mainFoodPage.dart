@@ -13,21 +13,115 @@ class MainFoodPage extends StatefulWidget {
 }
 
 class _MainFoodPageState extends State<MainFoodPage> {
-  final data = ["1", "2", "3", "4"];
-
+  List<String> images = [
+    'assets/images/boarding1.png',
+    'assets/images/boarding2.png',
+    'assets/images/boarding3.png',
+    'assets/images/boarding1.png',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        //margin: EdgeInsets.only(top: 300),
-        child: GridView.builder(
-            itemCount: data.length,
-            padding: const EdgeInsets.symmetric(vertical: 30),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, mainAxisSpacing: 30, crossAxisSpacing: 30),
-            itemBuilder: (BuildContext context, int index) {
-              return GridCard(index: index, onPress: () {});
-            }),
+      body: Center(
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(right: 20, top: 80),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  CircleAvatar(
+                    backgroundImage: AssetImage('assets/images/black.png'),
+                    radius: 20,
+                  ),
+                ],
+              ),
+            ),
+
+            //Text
+            Container(
+              margin: EdgeInsets.only(top: 20, bottom: 20),
+              padding: EdgeInsets.only(right: 190),
+              child: const Text(
+                'CompareIt',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            //Search bar
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              padding: EdgeInsets.only(right: 20, left: 20),
+              child: Row(
+                children: [
+                  Container(
+                    width: 350,
+                    height: 50,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey, width: 2),
+                        ),
+                        hintText: "Search",
+                        hintStyle: TextStyle(
+                          color: AppColors.textColor,
+                          fontSize: 16,
+                        ),
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: AppColors.mainColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            //gridview
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+                children: <Widget>[
+                  Container(
+                    //add image
+                    child: Card(
+                      child: Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/boarding1.png'),
+                              fit: BoxFit.fitWidth,
+                              alignment: Alignment.topCenter,
+                            ),
+                            borderRadius: BorderRadius.circular(60)),
+                      ),
+                    ),
+                  ),
+                  GridCard(
+                    index: 1,
+                    onPress: () {},
+                  ),
+                  GridCard(
+                    index: 2,
+                    onPress: () {},
+                  ),
+                  GridCard(
+                    index: 3,
+                    onPress: () {},
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
