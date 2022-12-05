@@ -11,9 +11,9 @@ class CustomTheme {
 
   static ThemeData getTheme() {
     Map<String, double> fontSize = {
-      "sm": 14,
-      "md": 18,
-      "lg": 24,
+      "sm": 10,
+      "md": 14,
+      "lg": 18,
     };
 
     return ThemeData(
